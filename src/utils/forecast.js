@@ -8,8 +8,8 @@ const forecast=(latitude,longitude,callback)=>{
     }else if(body.error){
       callback('Invalid location input',undefined)
     }else{
-      const{temperature,precipProbability}=body.currently
-      callback(undefined,'It is currently '+temperature +' degrees out. There is a '+ precipProbability +'% chance of rain.');
+      const{temperature,precipProbability,cloudCover,visibility}=body.currently
+      callback(undefined,'It is currently '+temperature +' degrees out. There is a '+ precipProbability +'% chance of rain with cloud cover of '+cloudCover+' and visibility will be '+visibility+'.');
     }
   })
 }
