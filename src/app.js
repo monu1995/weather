@@ -4,6 +4,7 @@ const path=require('path')
 const hbs = require('hbs')
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
+const port=process.env.PORT||3001
 
 const app=express();
 
@@ -91,6 +92,6 @@ app.get('*',(req,res)=>{
   })
 })
 
-app.listen(3001,()=>{
-  console.log(chalk.magenta('Server is up on port : '+chalk.yellow( 3001)))
+app.listen(port,()=>{
+  console.log(chalk.magenta('Server is up on port : '+chalk.yellow( port)))
 })
